@@ -93,7 +93,7 @@ input,button, select, textarea, label{
 body{
 	margin: 0;
 	padding: 0;
-	background-color: #FFF;
+	background-color: #830e0e;
 	font-family: Nunito, sans-serif;
 	font-size: 14px;
 	color: #4f4f67;
@@ -174,7 +174,7 @@ nav.menu .nav-header{
 	height: 170px;
 	text-align: center;
 	padding: 10px 0;
-	background:url("../img/avatar-bg.jpg") no-repeat right;
+	background:url("") no-repeat right;
 }
 
 nav .nav-container{
@@ -252,14 +252,16 @@ nav.menu ul.main-menu>li li a{
 /*-------------------------------------------------------------------
 [4. Inline Wrapper]
 *------------------------------------------------------------------*/
-.wrapper-inline{
-	position: absolute;
-	width: 100%;
-	bottom: 0;
-	top: 0;
-	background-color: #fff;
-	overflow: auto;
+.wrapper-inline {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    top: 0;
+    /* Updated with gradient background similar to the image */
+    background: linear-gradient(to right, #3db2ff, #004aad);
+    overflow: auto;
 }
+
 .wrapper.with-bg-image .wrapper-inline{
 	background-color: rgba(255,255,255,0.9);
 }
@@ -318,18 +320,56 @@ nav.menu ul.main-menu>li li a{
 	width: 48%;
 	float: left;
 }
-.col-3.center-item{margin:0 3%;}
-.purpule-bg{background: #544df3}
-.pink-bg{background: #ff505d !important}
-.orange-bg{background: #ffad3d}
-.blue-bg{background: #4886ff}
-.s1-bg{background: #fee2de}
-.s2-bg{background: #feddee}
-.s3-bg{background: #dad5fe}
-.s4-bg{background: #0fcc19}
-.s5-bg{background: #f7f7ff !important}
-.s6-bg{background: #feddee}
-.s7-bg{background: #fee2de}
+.col-3.center-item {
+    margin: 0 3%;
+}
+
+/* Updated color scheme */
+.purple-bg {
+    background: #6a5acd; /* A richer, deeper shade of purple */
+}
+
+.pink-bg {
+    background: #ff6b81 !important; /* Slightly muted for a modern, soft look */
+}
+
+.orange-bg {
+    background: #ffa500; /* A vibrant yet slightly softened orange */
+}
+
+.blue-bg {
+    background: #4169e1; /* A more vibrant, royal blue */
+}
+
+/* Soft background shades */
+.s1-bg {
+    background: #fde1d8; /* Light coral for a warm, soft tone */
+}
+
+.s2-bg {
+    background: #f8d3e9; /* A softer pink with a balanced pastel tone */
+}
+
+.s3-bg {
+    background: #d7d0fc; /* A lighter pastel lavender for a calm effect */
+}
+
+.s4-bg {
+    background: #1ec759; /* A fresher, more vibrant green for better energy */
+}
+
+.s5-bg {
+    background: #f2f2ff !important; /* Very light lavender for a subtle contrast */
+}
+
+.s6-bg {
+    background: #f8d3e9; /* Same soft pink as s2-bg for consistency */
+}
+
+.s7-bg {
+    background: #fde1d8; /* Same soft coral as s1-bg for a cohesive look */
+}
+
 
 .creamy-bg{
 	background: linear-gradient(to left, #100DD1, #083afb)
@@ -2872,15 +2912,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7ff0f1', end
 	border-radius: 19px;
 	padding: 15px;
 }
-.flash{
-background: #c5f493; /* Old browsers */
-background: -moz-linear-gradient(top, #c5f493 0%, #97ea3b 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top, #c5f493 0%,#97ea3b 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom, #c5f493 0%,#97ea3b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c5f493', endColorstr='#97ea3b',GradientType=0 ); /* IE6-9 */
-	border-radius: 19px;
-	padding: 15px;
-}
+
 
 .content-row {  
   display:flex;
