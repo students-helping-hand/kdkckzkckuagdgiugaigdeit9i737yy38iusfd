@@ -504,3 +504,139 @@ body {
 
 
 </html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Audio Icon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sticky Live Audio Icon -->
+    <div class="live-audio-icon" id="liveAudioIcon" onclick="openModal()">
+        🎙️ Live
+    </div>
+
+    <!-- Modal Popup -->
+    <div class="modal" id="liveQuizModal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Live Quiz is Streaming</h2>
+            <p>Join by clicking the button below:</p>
+            <button class="join-button" onclick="joinLiveQuiz()">Join Live Quiz</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+<style>
+
+/* Sticky live audio icon */
+.live-audio-icon {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: red;
+    color: white;
+    padding: 15px;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 1000;
+}
+
+@media (max-width: 600px) {
+    .live-audio-icon {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.join-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.join-button:hover {
+    background-color: #218838;
+}
+
+
+
+
+</style>
+
+
+
+<script>
+
+// Function to open the modal
+function openModal() {
+    document.getElementById('liveQuizModal').style.display = 'block';
+}
+
+// Function to close the modal
+document.getElementById('closeModal').onclick = function () {
+    document.getElementById('liveQuizModal').style.display = 'none';
+};
+
+// Function to simulate joining the live quiz
+function joinLiveQuiz() {
+    window.location.href = 'go:quiz'; // Replace with your live quiz URL
+}
+
+
+// Close the modal when clicking outside of the modal content
+window.onclick = function(event) {
+    if (event.target == document.getElementById('liveQuizModal')) {
+        document.getElementById('liveQuizModal').style.display = 'none';
+    }
+};
+
+
+
+</script>
