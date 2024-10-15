@@ -1,642 +1,174 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
-
-
-
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
-    <title>Pranam Software</title>
-
-    <!-- Google font file. If you want you can change. -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,900" rel="stylesheet">
-
-    <!-- Fontawesome font file css -->
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-
-    <!-- Animate css file for css3 animations. for more : https://daneden.github.io/animate.css -->
-    <!-- Only use animate action. If you dont use animation, you don't have to add.-->
-    <link rel="stylesheet" type="text/css" href="css/animate.css">
-
-    <!-- Template global css file. Requared all pages -->
-    <link rel="stylesheet" type="text/css" href="css/global.style.css">
-
-    <!-- Swiper slider css file -->
-    <link rel="stylesheet" href="css/swiper.min.css">
-
-    <!--turbo slider plugin css file -->
-    <link rel="stylesheet" type="text/css" href="turbo-slider/turbo.css">
-
-    <!-- JQuery library file. requared all pages -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-
-</head>
-
-<body>
-
-    <div class="wrapper ">
-
-        </div>
-        <div class="wrapper-inline">
-            <!-- Header area start -->
-            <header>
-                <!-- extra class no-background -->
-
-
-                <h1 class="page-title">A+ Vidya</h1>
-
-           
-
-            </header>
-            <!-- Header area end -->
-
-        
-               
-             
-
-            <!-- Page content start -->
-            <main class="margin">
-
-                <!--Banner-->
-                <section class="container">
-                    <div class="banner-div">
-                        <div class="banner-content">
-                            <h2 class="banner-head">We made learning Easy , Explore all Today</h2>
-                            <a class="c-btn" href="#">Welcome</a>
-                        </div>
-                    </div>
-                </section>
-				
-				
-
- <!---- Marquee ---->
-  <!DOCTYPE html>
-<html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title></title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Audio Player</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1a1a2e;
+      color: #fff;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
 
+    .audio-player {
+      background-color: #2d2f3b;
+      padding: 20px;
+      width: 100%;
+      max-width: 400px;
+      margin: 100px auto;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .controls button {
+      background-color: #0072ff;
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      font-size: 1.2em;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .controls button:hover {
+      background-color: #00c6ff;
+    }
+
+    .progress-container {
+      width: 100%;
+      background-color: #444;
+      height: 5px;
+      border-radius: 5px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    .progress {
+      background-color: #00c6ff;
+      height: 100%;
+      width: 0%;
+      border-radius: 5px;
+    }
+
+    .time {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      font-size: 0.9em;
+    }
+
+    .volume-control {
+      margin-top: 15px;
+    }
+
+    .volume-control input[type="range"] {
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<div class="twitter-scroll">
-  
-  <div class="dap-tw-logo">
-    <img src="https://cdn.iconscout.com/icon/free/png-256/graduating-student-2465650-2042096.png" width="33" height="30" />
+
+  <div class="audio-player">
+    <h2>Audio Player</h2>
+    
+    <audio id="audioPlayer" src="1.mp3"></audio>
+    
+    <!-- Play/Pause Button -->
+    <div class="controls">
+      <button id="playPauseBtn">Play</button>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-container" id="progressContainer">
+      <div class="progress" id="progress"></div>
+    </div>
+
+    <!-- Time Display -->
+    <div class="time">
+      <span id="currentTime">0:00</span>
+      <span id="totalTime">0:00</span>
+    </div>
+
+    <!-- Volume Control -->
+    <div class="volume-control">
+      <label for="volume">Volume:</label>
+      <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="1">
+    </div>
   </div>
-  
-  <a class="dap-tw-item" href="#link" target="_blank">
-    <span class="dap-tw-name">@Notice:Physics </span>
-    <span class="dap-tw-text">Aayam Physics Book is added</span>
-  </a>
 
-  <a class="dap-tw-item" href="#" target="_blank">
-    <span class="dap-tw-name">@Notice: Chemistry:</span>
-    <span class="dap-tw-text">Chemistry Is the adeed  </span>
-  </a>
-  
-  <a class="dap-tw-item" href="#" target="_blank">
-    <span class="dap-tw-name">@Notice: Guide</span>
-    <span class="dap-tw-text">All Book Guide are added
-  </a>
-  
-</div>
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='https://cdn.jsdelivr.net/jquery.marquee/1.3.1/jquery.marquee.min.js'></script><script  src="./script.js"></script>
-
-</body>
-</html>
-
-<script>
-$('.twitter-scroll').marquee({
-  duration: 15000,
-  pauseOnHover: false
-});
-
-</script>
-
-<style>
-.twitter-scroll {
-  background: #eee;
-  height: 38px;
-  line-height: 38px;
-  margin: 1em;
-  overflow: hidden;
-  position: relative;
-}
-
-.dap-tw-logo {
-  background-color: teal;
-  box-shadow: 1px 0px 0px 0px #fff;
-  height: 38px;
-  left: 0;
-  position: absolute;
-  text-align: center;
-  top: 0;
-  width: 38px;
-}
-.dap-tw-logo:after {
-  border-bottom: 6px solid transparent;
-  border-left: 6px solid teal;
-  border-top: 6px solid transparent;
-  filter: drop-shadow(2px 0px 0px #fff);
-  content: "";
-  height: 0;
-  margin-top: -6px;
-  position: absolute;
-  right: -5px;
-  top: 50%;
-  width: 0;
-}
-.dap-tw-logo img {
-  vertical-align: text-bottom;
-}
-
-a.dap-tw-item {
-  border-right: 1px solid #fff;
-  color: #222;
-  display: inline-block;
-  float: left;
-  padding: 0 1em;
-  text-decoration: none;
-  transition: background-color 0.25s ease;
-}
-a.dap-tw-item:hover {
-  background-color: #e1e1e1;
-}
-
-.dap-tw-name {
-  font-size: 0.8em;
-  font-weight: 600;
-  margin-right: 0.15em;
-  text-transform: uppercase;
-}
-</style>
-  
-  
-  <!----Marquee End --->
-	
-                <div class="clear"></div>
-
-                <section class="container">
-                    <div class="section-head">
-                 
-                    </div>
-                    <div class="c-wrapper">
-                        <div class="col-2 text-center mb-15 mr-2">
-                            <a href="go:00101">
-                                <div class="provide-item s1-bg">
-                                    <img src="https://bit.ly/3oRbNFY" class="cat" alt="">
-                                    <h4 class="b-text">Learning Hub</h4>
-                                    <p class="mb-0">Join Live Class</p>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-2 text-center mb-15 ml-2">
-                            <a href="go:00102">
-                                <div class="provide-item s2-bg">
-                                    <img src="https://www.pngkey.com/png/full/895-8951628_student-learning-writing-boy-doing-homework-drawing.png" class="cat" alt="">
-                                    <h4 class="b-text">Homework Help</h4>
-                                    <p class="mb-0">Do Homework DobutFree</p>
-                                </div>
-                            </a>
-                        </div>
-						
-						   <div class="c-wrapper">
-                        <div class="col-2 text-center mb-15 mr-2">
-                            <a href="go:00103">
-                                <div class="provide-item s3-bg">
-                                    <img src="https://bit.ly/425RN0O" class="cat" alt="">
-                                    <h4 class="b-text">Book </h4>
-                                    <p class="mb-0">Read Books Online</p>
-                                </div>
-                            </a>
-                        </div>
-						<div class="col-2 text-center mb-15 ml-2">
-                            <a href="go:00104">
-                                <div class="provide-item s2-bg">
-                                    <img src="https://static.vecteezy.com/system/resources/previews/009/418/828/non_2x/shop-marketing-3d-icon-illustration-for-your-website-user-interface-and-presentation-3d-render-illustration-free-png.png" class="cat" alt="">
-                                    <h4 class="b-text">Shop</h4>
-                                    <p class="mb-0"> Buy Goods at Discounted Rate</p>
-                                </div>
-                            </a>
-                        </div>
-					
-						
-						
-					      <div class="c-wrapper">
-                        <div class="col-2 text-center mb-15 mr-2">
-                            <a href="go:00105">
-                                <div class="provide-item s1-bg">
-                                    <img src="https://bit.ly/3AzK6nT" class="cat" alt="">
-                                    <h4 class="b-text">	Summury</h4>
-                                    <p class="mb-0">Listen Summury</p>
-                                </div>
-                            </a>
-                        </div>
-
-                
-						<div class="col-2 text-center mb-15 ml-2">
-                            <a href="go:00106">
-                                <div class="provide-item s2-bg">
-                                    <img src="https://mmargherita.org/wp-content/uploads/2019/06/talent-show-1.png" class="cat" alt="">
-                                    <h4 class="b-text">  Creation Show</h4>
-                                    <p class="mb-0"> Showcase Your Talent</p>
-                                </div>
-                            </a>
-                        </div>
-						
-						
-						
-						
-
-                        <div class="col-2 text-center ml-2">
-                            <a href="go:00107">
-                                <div class="provide-item s4-bg">
-                                    <img src="img/icons/s4.jpeg" class="cat" alt="">
-                                    <h4 class="b-text">Fact Box</h4>
-                                    <p class="mb-0">Thrill with New Facts</p>
-                                </div>
-                            </a>
-                        </div>
-						
-					 <div class="c-wrapper">
-                        <div class="col-2 text-center mb-15 mr-2">
-                            <a href="go:00108">
-                                <div class="provide-item s3-bg">
-                                    <img src="https://store-images.s-microsoft.com/image/apps.64102.14249567039197731.289a8bae-3ffb-470a-8094-d0d8bea25154.bf451754-c0a3-4264-aefc-c8ed6bb5fb3e" class="cat" alt="">
-                                    <h4 class="b-text">Binural Beats</h4>
-                                    <p class="mb-0">Relax Your Mind</p>
-                                </div>
-                            </a>
-                        </div>
-						
-						
-						
-
-
-
-<html>
-<head>
-<style>
-body {
-  background-image: url('https://wallpapercave.com/wp/wp6068812.jpg');
-}
-</style>
-</head>
-<body>
-
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        </div>
-                    </div>
-                </section>
-
-                <div class="clear"></div>
-
-                <!--tabs-->
-                <section class="container">
-                    <div class="section-head">
-					<center> Exam Prepiration</center>
-                     
-                    </div>
-                    <div class="c-wrapper">
-                        <div class="col-3 text-center">
-                            <a href="go:setsoln">
-                                <div class="provide-item purpule-bg">
-                                    <img src="img/icons/icon1.png" alt="">
-                                    <h4 class="w-text">Exam Prepiration</h4>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-3 center-item text-center">
-                            <a href="go:formula">
-                                <div class="provide-item pink-bg">
-                                    <img src="img/icons/icon2.png" alt="">
-                                    <h4 class="w-text">Formulas</h4>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-3 text-center">
-                            <a href="go:examwrt">
-                                <div class="provide-item orange-bg">
-                                    <img src="img/icons/icon3.png" alt="">
-                                    <h4 class="w-text">Exam Writting Techniques</h4>
-                                </div>
-                            </a>
-                        </div>
-						
-						
-                    </div>
-                </section>
-
-
-
-           <br>
-                    <div class="c-wrapper">
-                        <div class="col-3 text-center">
-                            <a href="go:setsoln">
-                                <div class="provide-item purpule-bg">
-                                    <img src="img/icons/icon1.png" alt="">
-                                    <h4 class="w-text">Exam Prepiration</h4>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-3 center-item text-center">
-                            <a href="go:formula">
-                                <div class="provide-item pink-bg">
-                                    <img src="img/icons/icon2.png" alt="">
-                                    <h4 class="w-text">Formulas</h4>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-3 text-center">
-                            <a href="go:examwrt">
-                                <div class="provide-item orange-bg">
-                                    <img src="img/icons/icon3.png" alt="">
-                                    <h4 class="w-text">Exam Writting Techniques</h4>
-                                </div>
-                            </a>
-                        </div>
-						
-						
-                    </div>
-                </section>
-                <!--end tab-->
-
-                <div class="clear"></div>
-
-                <section class="container">
-                    <div class="section-head">
-                    
-                    </div>
-                
-                </section>
-
-                <div class="clear"></div>
-
-                <section class="container">
-                	<div class="section-head">
-                        <h4 class="title-main">Featured Apps</h4>
-                        <a class="c-btn" href="#">See More Apps</a>
-                    </div>
-
-                    <div>
-                        <ul class="courses-list list-unstyled mb-0">
-                            <li>
-                                <a href="#" class="d-flex align-items-center justify-content-between">
-                                    <div class="d-flex align-items-center">
-                                        <img class="img-xs" src="https://www.harperwoodslibrary.org/teens/middle-schoolers/homework-pic.png/@@images/image.png" alt="Course image">
-                                        <div class="ml-10">
-                                          <h4 class="courses-name"></h4>
-                                          <small class="text-muted c-period"><i class="fa fa-calendar mr-1"></i> Complete Project <span class="ml-10"><i class="fa fa-clock-o mr-1"></i> Complete Homework</span></small>
-                                        </div>
-                                      </div>
-                                    <div>
-                                        <small class="d-block c-price">Alpha Study</small>
-                                        <small class="txt-orange d-block">
-                                            <i class="fa fa-star"></i> 
-                                            <i class="fa fa-star"></i> 
-                                            <i class="fa fa-star"></i> 
-                                            <i class="fa fa-star"></i> 
-                                            <i class="fa fa-star"></i>
-                                        </small>
-                                    </div>
-                                </a>
-                            </li>
-							
-							
-							    <div>
-                        <ul class="courses-list list-unstyled mb-0">
-                            <li>
-                                <a href="#" class="d-flex align-items-center justify-content-between">
-                                    <div class="d-flex align-items-center">
-                                        <img class="img-xs" src="https://www.harperwoodslibrary.org/teens/middle-schoolers/homework-pic.png/@@images/image.png" alt="Course image">
-                                        <div class="ml-10">
-                                          <h4 class="courses-name"></h4>
-                                          <small class="text-muted c-period"><i class="fa fa-calendar mr-1"></i> Complete Project <span class="ml-10"><i class="fa fa-clock-o mr-1"></i> Complete Homework</span></small>
-                                        </div>
-                                      </div>
-                                    <div>
-                                        <small class="d-block c-price">Alpha Study</small>
-                                        <small class="txt-orange d-block">
-                                            <i class="fa fa-star"></i> 
-                                            <i class="fa fa-star"></i> 
-                                            <i class="fa fa-star"></i> 
-                                            <i class="fa fa-star"></i> 
-                                            <i class="fa fa-star"></i>
-                                        </small>
-                                    </div>
-                                </a>
-                            </li>
-                        
-
-                    </div>
-
-                </section>
-
-                <footer>
-                    <div class="container">
-                        <ul>
-                            <li><a href="https://www.facebook.com/pranamsoftware/"><i class="fa fa-facebook"></i></a></li>
-                  
-                            <li><a href="https://www.google.com/search?client=firefox-b-d&q=pranam+software"><i class="fa fa-google"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        </ul>
-                        <p>Copyright ©Pranam Software All Right Reserved</p>
-                    </div>
-                </footer>
-            </main>
-            <!-- Page content end -->
-        </div>
-    </div>
-
-    <!--Page loader DOM Elements. Requared all pages-->
-    <div class="sweet-loader">
-        <div class="box">
-            <div class="circle1"></div>
-            <div class="circle2"></div>
-            <div class="circle3"></div>
-        </div>
-    </div>
-
-    <!-- Swiper JS -->
-    <script src="js/swiper.min.js"></script>
-
-    <!-- Initialize Swiper -->
-    <script>
-        
-    </script>
-
-    <!-- Template global script file. requared all pages -->
-    <script src="js/global.script.js"></script>
-
-    <!-- Turbo slider plugin file. requared only wizard pages -->
-    <script src="turbo-slider/turbo.min.js"></script>
-    <script src="js/turbo-ini.js"></script>
-   
-</body>
-
-
-
-</html>
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Audio Icon</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Sticky Live Audio Icon -->
-    <div class="live-audio-icon" id="liveAudioIcon" onclick="openModal()">
-        🎙️ Live
-    </div>
-
-    <!-- Modal Popup -->
-    <div class="modal" id="liveQuizModal">
-        <div class="modal-content">
-            <span class="close" id="closeModal">&times;</span>
-            <h2>Live Quiz is Streaming</h2>
-            <p>Join by clicking the button below:</p>
-            <button class="join-button" onclick="joinLiveQuiz()">Join Live Quiz</button>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
-
-
-
-<style>
-
-/* Sticky live audio icon */
-.live-audio-icon {
-    position: fixed;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    background-color: red;
-    color: white;
-    padding: 15px;
-    border-radius: 0 8px 8px 0;
-    cursor: pointer;
-    font-size: 18px;
-    z-index: 1000;
-}
-
-@media (max-width: 600px) {
-    .live-audio-icon {
-        font-size: 14px;
-        padding: 10px;
+  <script>
+    // Get elements
+    const audio = document.getElementById('audioPlayer');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const progressContainer = document.getElementById('progressContainer');
+    const progress = document.getElementById('progress');
+    const currentTimeEl = document.getElementById('currentTime');
+    const totalTimeEl = document.getElementById('totalTime');
+    const volumeControl = document.getElementById('volumeControl');
+
+    // Toggle Play/Pause
+    playPauseBtn.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        playPauseBtn.textContent = 'Pause';
+      } else {
+        audio.pause();
+        playPauseBtn.textContent = 'Play';
+      }
+    });
+
+    // Update Progress Bar and Time
+    audio.addEventListener('timeupdate', () => {
+      const duration = audio.duration;
+      const currentTime = audio.currentTime;
+      
+      const progressPercent = (currentTime / duration) * 100;
+      progress.style.width = `${progressPercent}%`;
+
+      // Update current time display
+      currentTimeEl.textContent = formatTime(currentTime);
+      totalTimeEl.textContent = formatTime(duration);
+    });
+
+    // Format Time (Minutes:Seconds)
+    function formatTime(seconds) {
+      const minutes = Math.floor(seconds / 60);
+      const remainingSeconds = Math.floor(seconds % 60);
+      return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
     }
-}
 
-/* Modal styling */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1001;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-}
+    // Set Progress Bar Click to Seek Audio
+    progressContainer.addEventListener('click', (e) => {
+      const width = progressContainer.clientWidth;
+      const clickX = e.offsetX;
+      const duration = audio.duration;
 
-.modal-content {
-    background-color: white;
-    margin: 15% auto;
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 400px;
-    text-align: center;
-}
+      audio.currentTime = (clickX / width) * duration;
+    });
 
-.close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 20px;
-    cursor: pointer;
-}
+    // Volume Control
+    volumeControl.addEventListener('input', (e) => {
+      audio.volume = e.target.value;
+    });
 
-.join-button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.join-button:hover {
-    background-color: #218838;
-}
-
-
-
-
-</style>
-
-
-
-<script>
-
-// Function to open the modal
-function openModal() {
-    document.getElementById('liveQuizModal').style.display = 'block';
-}
-
-// Function to close the modal
-document.getElementById('closeModal').onclick = function () {
-    document.getElementById('liveQuizModal').style.display = 'none';
-};
-
-// Function to simulate joining the live quiz
-function joinLiveQuiz() {
-    window.location.href = 'go:quiz'; // Replace with your live quiz URL
-}
-
-
-// Close the modal when clicking outside of the modal content
-window.onclick = function(event) {
-    if (event.target == document.getElementById('liveQuizModal')) {
-        document.getElementById('liveQuizModal').style.display = 'none';
-    }
-};
-
-
-
-</script>
+    // Display total duration when audio is loaded
+    audio.addEventListener('loadedmetadata', () => {
+      totalTimeEl.textContent = formatTime(audio.duration);
+    });
+  </script>
+  
+</body>
+</html>
